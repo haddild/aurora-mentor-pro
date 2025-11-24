@@ -1,0 +1,215 @@
+:root {
+  --accent: #00aaff;
+  --bubble-user: rgba(0, 150, 255, 0.25);
+  --bubble-assistant: rgba(0, 200, 255, 0.25);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  height: 100%;
+  color: #ffffff;
+  background: radial-gradient(circle at 20% 30%, rgba(0, 200, 255, 0.3), rgba(9, 2, 79, 0.9)) fixed;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 6px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+
+.nav-button .icon {
+  font-size: 1.2rem;
+}
+
+.nav-button.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.theme-picker {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.theme-btn {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ffffff44;
+  border-radius: 50%;
+  margin-left: 6px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.theme-btn.selected,
+.theme-btn:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.chat-container,
+.notes-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 10px;
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  word-wrap: break-word;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: var(--bubble-user);
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background: var(--bubble-assistant);
+}
+
+.mode-tag {
+  font-size: 0.65rem;
+  opacity: 0.8;
+  margin-right: 6px;
+  text-transform: uppercase;
+}
+
+.input-area {
+  display: flex;
+  margin-top: 8px;
+}
+
+.input-area textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  margin-right: 8px;
+}
+
+.input-area textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-area button {
+  padding: 0 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: var(--accent);
+  color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.input-area button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.notes-container textarea {
+  flex: 1;
+  resize: none;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.notes-container textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.notes-info {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.birthday-banner {
+  background: var(--accent);
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+@media (min-width: 700px) {
+  .app {
+    flex-direction: row;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 200px;
+    min-width: 150px;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .chat-container,
+  .notes-container {
+    width: calc(100% - 200px);
+  }
+
+  .theme-picker {
+    flex-direction: row;
+    margin-top: auto;
+    padding: 8px 0;
+  }
+}
