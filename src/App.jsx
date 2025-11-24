@@ -157,7 +157,7 @@ const App = () => {
         <div className="notes-container">
           {showBirthday && (
             <div className="birthday-banner">
-              \uD83C\uDF82 Happy Birthday my angel! \u2728
+              \uD83C\uDF82 Happy birthday my angelll! \u2728
             </div>
           )}
           <textarea
@@ -176,7 +176,7 @@ const App = () => {
         <div className="chat-container">
           {showBirthday && (
             <div className="birthday-banner">
-              \uD83C\uDF82 Happy Birthday my angel! \u2728
+              \uD83C\uDF82 Happy birthday my angelll! \u2728
             </div>
           )}
           <div className="messages">
